@@ -9,8 +9,8 @@ const app = express();
 connectDB();
 
 // Initialize Middleware
-app.use(cors());
-app.use(express.json({ extended: false }));
+app.use(cors()); // Allows requests from our frontend
+app.use(express.json({ extended: false })); // Allows us to accept JSON data in request bodies
 
 // Define API Routes
 app.use('/api/auth', require('./routes/authRoutes'));
@@ -18,6 +18,7 @@ app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/appointments', require('./routes/appointmentRoutes'));
 app.use('/api/records', require('./routes/medicalRecordRoutes'));
 
+// Simple test route
 app.get('/', (req, res) => res.send('MediDesk API is Running'));
 
 const PORT = process.env.PORT || 5000;
