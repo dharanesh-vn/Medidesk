@@ -4,7 +4,6 @@ const { check } = require('express-validator');
 const authController = require('../controllers/authController');
 
 // @route   POST api/auth/register
-// @desc    Register a user
 router.post(
   '/register',
   [
@@ -16,7 +15,6 @@ router.post(
 );
 
 // @route   POST api/auth/login
-// @desc    Authenticate user & get token
 router.post(
   '/login',
   [
